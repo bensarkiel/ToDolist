@@ -59,9 +59,9 @@ include_once("koneksi.php");
         </div>
         <div class="col mb-2">
             <label for="tgl_akhir" class="form-label fw-bold">
-                Tanggal Ahkir
+                Tanggal Akhir
             </label>
-            <input type="date" class="form-control" name="tgl_akhir" id="tgl_akhir" placeholder="Tanggal Ahkir" value="<?php echo $tgl_akhir ?>">
+            <input type="date" class="form-control" name="tgl_akhir" id="tgl_akhir" placeholder="Tanggal Akhir" value="<?php echo $tgl_akhir ?>">
         </div>
         <div class="col mb-2 d-flex">
             <button type="submit" class="btn btn-primary rounded-pill px-3 mt-auto" name="simpan">Simpan</button>
@@ -76,7 +76,7 @@ include_once("koneksi.php");
                 <th scope="col">#</th>
                 <th scope="col">Kegiatan</th>
                 <th scope="col">Tanggal Awal</th>
-                <th scope="col">Tanggal Ahkir</th>
+                <th scope="col">Tanggal Akhir</th>
                 <th scope="col">Status</th>
                 <th scope="col">Aksi</th>
             </tr>
@@ -88,7 +88,7 @@ include_once("koneksi.php");
             <?php
             $result = mysqli_query(
                 $mysqli,
-                "SELECT * FROM todolist "
+                "SELECT * FROM todolist ORDER BY status,tgl_awal"
             );
             $no = 1;
             while ($data = mysqli_fetch_array($result)) {
